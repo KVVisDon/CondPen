@@ -1,5 +1,7 @@
 data = d3.csvParse(await FileAttachment("CP Donnees cles graph 1.csv").text(), d3.autoType)
-
+// update with new file upload and file location
+// check also minute 27 of video for additions to the line of code
+// check about csv vs dsv at min 31 of video
 
 chart = {
     replay;
@@ -19,7 +21,7 @@ chart = {
           .duration(duration)
           .ease(d3.easeLinear);
   
-      // Extract the top bar’s value.
+      
       x.domain([0, keyframe[1][0].value]);
   
       updateAxis(keyframe, transition);
@@ -31,7 +33,7 @@ chart = {
       await transition.end();
     }
   }
-
+// min 18 video - peut etre ajouter svg.main
 
 duration = 250
 
