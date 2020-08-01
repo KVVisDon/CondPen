@@ -35,6 +35,10 @@ const y = d3.scaleLinear()
             .range([height - margin.bottom - 5, margin.top])
             .interpolate(d3.interpolateRound)
 
+const teinte = d3.scaleSequential()
+        .domain([0, d3.max(fruits, d => d.count)])
+        .interpolator(d3.interpolateBlues)
+
 // Ajouter les barres
 svg.append('g')
    .selectAll('rect')
