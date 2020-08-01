@@ -3,6 +3,13 @@ data = d3.csvParse(await FileAttachment("Donnees CP.csv").text(), d3.autoType)
 // check about csv vs dsv at min 31 of video
 // enlever tout reference à category
 
+d3.csv("data/Donnees CP.csv", function (d) {
+  return {
+    annee : d.Year
+    canton : d.Canton
+  }
+})
+
 chart = {
   // on a enlevé le "replay;" ici
 
