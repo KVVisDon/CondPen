@@ -5,13 +5,12 @@ const margin = { top: 20, right: 0, bottom: 20, left: 20 };
 
 d3.dsv(";", "Data/Donnees CP.csv", function (d) {
     return {
-        annee : d.Year,
-        canton : d.Canton,
-        condamnations : d.CondamnationsAdultes
-    }
-}).then(function(Data) {
+        lieu: d.Canton,
+        annee: d.Year,
+        condamnations: d.CondamnationsAdultes
+    };
+}).then(function(data) {
 
-    console.log(Data)
   
   // Créer l'élément SVG et le configurer
     const svg = d3.select('.main')
@@ -22,25 +21,25 @@ d3.dsv(";", "Data/Donnees CP.csv", function (d) {
   
   // Créer l'échelle horizontale (fonctions D3)
     const x = d3.scaleBand()
-    .domain(canton.map(d => d.annee))
+    .domain(lieu.map(d => d.annee))
     .range([margin.left, width - margin.right])
     .padding(0.1)
     .round(true)
   
   // Créer l'échelle verticale (fonctions D3)
     const y = d3.scaleLinear()
-    .domain([0, d3.max(canton, d => d.condamnations)])
+    .domain([0, d3.max(lieu, d => d.condamnations)])
     .range([height - margin.bottom - 5, margin.top])
     .interpolate(d3.interpolateRound)
   
     const teinte = d3.scaleSequential()
-    .domain([0, d3.max(canton, d => d.condamnations)])
+    .domain([0, d3.max(lieu, d => d.condamnations)])
     .interpolator(d3.interpolateBlues)
   
   // Ajouter les barres
     svg.append('g')
     .selectAll('rect')
-    .data(canton)
+    .data(lieu)
     .enter()
     .append('rect')
     .attr('width', x.bandwidth())
@@ -55,11 +54,11 @@ d3.dsv(";", "Data/Donnees CP.csv", function (d) {
     .attr('text-anchor', 'middle')
     .attr('transform', `translate(${x.bandwidth() / 2}, 6)`)
     .selectAll('text')
-    .data(canton)
+    .data(lieu)
     .enter()
     .append('text')
     .attr('dy', '0.35em')
-    .attr('x', d => x(d.name))
+    .attr('x', d => x(d.annee))
     .attr('y', d => y(d.condamnations))
     .text(d => d.condamnations)
   
