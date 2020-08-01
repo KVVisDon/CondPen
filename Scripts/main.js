@@ -16,7 +16,7 @@ const fruits = [
 ];
 
 // Créer l'élément SVG et le configurer
-const svg = d3.select('body')
+const svg = d3.select('.main')
               .append('svg')
               .attr('width', width)
               .attr('height', height)
