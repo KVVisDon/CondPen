@@ -1,20 +1,20 @@
-data = d3.csvParse(await FileAttachment("CP Donnees cles graph 1.csv").text(), d3.autoType)
-// update with new file upload and file location
+data = d3.csvParse(await FileAttachment("Donnees CP.csv").text(), d3.autoType)
 // check also minute 27 of video for additions to the line of code
 // check about csv vs dsv at min 31 of video
 
 chart = {
-  replay;
+  // on a enlevé le "replay;" ici
 
-  const svg = d3.create("svg")
-      .attr("viewBox", [0, 0, width, height]);
+  const : svg = d3.create("svg")
+      .attr("viewBox", [0, 0, width, height]),
+      // min 18 video - peut etre ajouter svg.main
 
-  const updateBars = bars(svg);
-  const updateAxis = axis(svg);
-  const updateLabels = labels(svg);
-  const updateTicker = ticker(svg);
+  const : updateBars = bars(svg),
+  const : updateAxis = axis(svg),
+  const : updateLabels = labels(svg),
+  const : updateTicker = ticker(svg),
 
-  yield svg.node();
+  yield svg.node(),
 
   for (const keyframe of keyframes) {
     const transition = svg.transition()
@@ -33,7 +33,7 @@ chart = {
     await transition.end();
   }
 }
-// min 18 video - peut etre ajouter svg.main
+
 
 duration = 250
 
@@ -59,20 +59,20 @@ k = 10
 
     
 keyframes = {
-    const keyframes = [];
-    let ka, a, kb, b;
-    for ([[ka, a], [kb, b]] of d3.pairs(datevalues)) {
-      for (let i = 0; i < k; ++i) {
-        const t = i / k;
-        keyframes.push([
-          new Date(ka * (1 - t) + kb * t),
-          rank(name => (a.get(name) || 0) * (1 - t) + (b.get(name) || 0) * t)
-        ]);
-      }
+  const keyframes = [],
+  let ka, a, kb, b;
+  for ([[ka, a], [kb, b]] of d3.pairs(datevalues)) {
+    for (let i = 0; i < k; ++i) {
+      const t = i / k;
+      keyframes.push([
+        new Date(ka * (1 - t) + kb * t),
+        rank(name => (a.get(name) || 0) * (1 - t) + (b.get(name) || 0) * t)
+      ]);
     }
-    keyframes.push([new Date(kb), rank(name => b.get(name) || 0)]);
-    return keyframes;
   }
+  keyframes.push([new Date(kb), rank(name => b.get(name) || 0)]);
+  return keyframes;
+}
 
 nameframes = d3.groups(keyframes.flatMap(([, data]) => data), d => d.name)
 
@@ -193,15 +193,14 @@ formatDate = d3.utcFormat("%Y")
 
 
 color = {
-    const scale = d3.scaleOrdinal(d3.schemeTableau10);
-    if (data.some(d => d.category !== undefined)) {
-      const categoryByName = new Map(data.map(d => [d.name, d.category]))
-      scale.domain(Array.from(categoryByName.values()));
-      return d => scale(categoryByName.get(d.name));
-    }
-    return d => scale(d.name);
+  const scale = d3.scaleOrdinal(d3.schemeTableau10),
+  if (data.some(d => d.category !== undefined)) {
+    const categoryByName = new Map(data.map(d => [d.name, d.category]))
+    scale.domain(Array.from(categoryByName.values()));
+    return d => scale(categoryByName.get(d.name));
   }
-
+  return d => scale(d.name);
+}
 
 
 x = d3.scaleLinear([0, 1], [margin.left, width - margin.right])
