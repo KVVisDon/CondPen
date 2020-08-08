@@ -1,7 +1,7 @@
 // Paramètres de la visualisation
-const width = 2000;
-const height = 300;
-const margin = { top: 120, right: 0, bottom: 20, left: 50 };
+const width = 1200;
+const height = 500;
+const margin = { top: 50, right: 0, bottom: 20, left: 50 };
 
 const cantons = [
   {id: "AG", name: "Argovie"},
@@ -35,6 +35,7 @@ const cantons = [
 let cpData;
 
 let currentCanton = 'ZH';
+let currentAnnee = '2017';
 
 let condBars;
 let condTitles;
@@ -123,17 +124,23 @@ function setupCondamnationsPenales() {
     .call(d3.axisLeft(condScaleY))
     .call(g => g.select('.domain').remove());
 
-// cette étape en dessous fait disparaitre le choix des cantons
-  //d3.select("#cantons").on("change"), (e) => {
-    //const canton = d3.event.target.value;
-    //currentCanton = canton;
-    //loadData();
-  //})
+  d3.select("#cantons").on("change", (e) => {
+    const canton = d3.event.target.value;
+    currentCanton = canton;
+    loadData();
+  })
+
+  d3.select3.select("#annee").on("input", (e) => {
+    const annee = d3.event.target.value;
+    currentAnnee = annee;
+    d3.select('.current-annee').text(currentAnnee)
+    graphCondamnationsPenales();
+  })
 }
 // met en place de la visualisation
 
 function graphCondamnationsPenales() {
-  const data = cpData.filter(d => d.canton === currentCanton);
+  const data = cpData.filter(d => d.canton === currentCanton && d.annee === currentAnnee);
 
   condBars.selectAll('rect')
     .data(data)
@@ -159,7 +166,7 @@ setup();
 // vérifier les chiffres sur l'echelle verticale
 // lire instructions du mail session 10 pour la partie READ.me
 // questions: 1) après réusinage, le graphique ne s'affiche plus
-            //2) étape de d3.select dans la fonction setup fait disparaitre le choix de cantons
             //3) ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
             //4) faut-il utiliser plus de sets de données?
+            //5) lui rappeler qu'il n'a pas montré qu'il fallait mettre la classe cond dans l'index
 // ajouter les icônes des drapeaux des cantons/ou leurs couleurs

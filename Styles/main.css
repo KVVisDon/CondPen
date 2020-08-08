@@ -2,3 +2,19 @@ body {
     margin: 1em;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+label {
+    display: inline-block;
+    min-width: 4em;
+    min-height: 1.5em;
+}
+
+input {
+    vertical-align: middle;
+    min-width: 28em;
+    min-height: 1.5em;
+}
+
+.footer {
+    margin-top: 2em;
+}
