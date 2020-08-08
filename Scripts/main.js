@@ -3,7 +3,38 @@ const width = 2000;
 const height = 300;
 const margin = { top: 120, right: 0, bottom: 20, left: 50 };
 
+const cantons = [
+  {id: "AG", name: "Argovie"},
+  {id: "AI", name: "Appenzell Rhodes-Intérieures"},
+  {id: "AR", name: "Appenzell Rhodes-Extérieures"},
+  {id: "BE", name: "Berne"},
+  {id: "BL", name: "Bâle-Campagne"},
+  {id: "BS", name: "Bâle-Ville"},
+  {id: "FR", name: "Fribourg"},
+  {id: "GE", name: "Genève"},
+  {id: "GL", name: "Glaris"},
+  {id: "GR", name: "Grisons"},
+  {id: "JU", name: "Jura"},
+  {id: "LU", name: "Lucerne"},
+  {id: "NE", name: "Neuchâtel"},
+  {id: "NW", name: "Nidwald"},
+  {id: "OW", name: "Obwald"},
+  {id: "SG", name: "St-Gall"},
+  {id: "SH", name: "Schaffhouse"},
+  {id: "SO", name: "Soleure"},
+  {id: "SZ", name: "Schwytz"},
+  {id: "TG", name: "Thurgovie"},
+  {id: "TI", name: "Tessin"},
+  {id: "UR", name: "Uri"},
+  {id: "VD", name: "Vaud"},
+  {id: "VS", name: "Valais"},
+  {id: "ZG", name: "Zoug"},
+  {id: "ZH", name: "Zurich"},
+];
+
 let cpData;
+
+let currentCanton = 'ZH';
 
 let condBars;
 let condTitles;
@@ -27,9 +58,28 @@ function loadData() {
 }
 // Charge les données
 
+function getCantonLongName(canton) {
+  return cantons.find(s=>s.id === canton).name;
+}
+
 function onDataLoaded(data) {
   cpData = data;
-  graphCondamnationsPenales("ZH");
+
+  d3.select('#cantons')
+    .selectAll("option")
+    .data(cantons)
+    .join('option')
+      .attr('value', d=>d.id)
+      .text(d=>d.name)
+      .each(function(d) {
+        const option = d3.select(this);
+        if(d.id === currentCanton) {
+          option.attr("selected", '');
+        } else {
+          option.attr('selected', null);
+        }
+      })
+  graphCondamnationsPenales();
 }
 
 function setupCondamnationsPenales() {
@@ -72,11 +122,18 @@ function setupCondamnationsPenales() {
     .attr('transform', `translate(${margin.left}, 0)`)
     .call(d3.axisLeft(condScaleY))
     .call(g => g.select('.domain').remove());
+
+// cette étape en dessous fait disparaitre le choix des cantons
+  //d3.select("#cantons").on("change"), (e) => {
+    //const canton = d3.event.target.value;
+    //currentCanton = canton;
+    //loadData();
+  //})
 }
 // met en place de la visualisation
 
-function graphCondamnationsPenales(canton) {
-  const data = cpData.filter(d => d.canton === "ZH");
+function graphCondamnationsPenales() {
+  const data = cpData.filter(d => d.canton === currentCanton);
 
   condBars.selectAll('rect')
     .data(data)
@@ -101,3 +158,8 @@ setup();
 
 // vérifier les chiffres sur l'echelle verticale
 // lire instructions du mail session 10 pour la partie READ.me
+// questions: 1) après réusinage, le graphique ne s'affiche plus
+            //2) étape de d3.select dans la fonction setup fait disparaitre le choix de cantons
+            //3) ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons
+            //4) faut-il utiliser plus de sets de données?
+// ajouter les icônes des drapeaux des cantons/ou leurs couleurs
