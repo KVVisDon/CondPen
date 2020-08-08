@@ -51,9 +51,9 @@ function setup () {
 function loadData() {
   d3.dsv(";", "Data/Donnees CP.csv", function (d) {
     return {
-        canton: d.Canton,
-        annee: d.Year,
-        condamnations: d.CondamnationsAdultes
+      canton: d.Canton,
+      annee: d.Year,
+      condamnations: d.CondamnationsAdultes
     }
   }).then(onDataLoaded);
 }
@@ -130,7 +130,7 @@ function setupCondamnationsPenales() {
     loadData();
   })
 
-  d3.select3.select("#annee").on("input", (e) => {
+  d3.select("#annee").on("input", (e) => {
     const annee = d3.event.target.value;
     currentAnnee = annee;
     d3.select('.current-annee').text(currentAnnee)
@@ -166,6 +166,7 @@ setup();
 // vérifier les chiffres sur l'echelle verticale
 // lire instructions du mail session 10 pour la partie READ.me
 // questions: 1) après réusinage, le graphique ne s'affiche plus
+            //2) on arrive pas à faire changer dynamiquement l'annee dans le titre
             //3) ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
             //4) faut-il utiliser plus de sets de données?
             //5) lui rappeler qu'il n'a pas montré qu'il fallait mettre la classe cond dans l'index
