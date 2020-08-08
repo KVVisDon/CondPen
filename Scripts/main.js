@@ -25,6 +25,7 @@ function loadData() {
     }
   }).then(onDataLoaded);
 }
+// Charge les données
 
 function onDataLoaded(data) {
   cpData = data;
@@ -72,6 +73,7 @@ function setupCondamnationsPenales() {
     .call(d3.axisLeft(condScaleY))
     .call(g => g.select('.domain').remove());
 }
+// met en place de la visualisation
 
 function graphCondamnationsPenales(canton) {
   const data = cpData.filter(d => d.canton === "ZH");
@@ -93,9 +95,9 @@ function graphCondamnationsPenales(canton) {
       .attr('y', d => condScaleY(d.condamnations))
       .text(d => d.condamnations);
 }
+// c'est la fonction de dessin et de mise à jour
 
 setup();
 
 // vérifier les chiffres sur l'echelle verticale
-// vidéo 10 GitHub Pages à faire - sinon, lui signaler que on a pas fait cet étape puisque c'est payant
 // lire instructions du mail session 10 pour la partie READ.me
