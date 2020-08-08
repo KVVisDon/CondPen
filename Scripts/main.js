@@ -170,4 +170,5 @@ setup();
             //3) ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
             //4) faut-il utiliser plus de sets de données?
             //5) lui rappeler qu'il n'a pas montré qu'il fallait mettre la classe cond dans l'index
+            //6) on est obligé d'ajouter une carte?
 // ajouter les icônes des drapeaux des cantons/ou leurs couleurs
