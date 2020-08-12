@@ -145,11 +145,8 @@ function graphCondamnationsPenales() {
   const index = annees.indexOf(Number(currentAnnee))
   var backupAnnee = [...annees]
   backupAnnee.splice(index+1, annees.length-1)
-  console.log(backupAnnee)
   const data = backupAnnee.map(a => cpData.filter(d => d.canton === currentCanton && d.annee.split('-')[0] == a)).map(t => t[0])
-  //const data = cpData.filter(d => d.canton === currentCanton && d.annee.split('-')[0] === currentAnnee);
 
-console.log(data)
   condBars.selectAll('rect')
     .data(data)
     .join('rect')
@@ -173,10 +170,10 @@ setup();
 
 // vérifier les chiffres sur l'echelle verticale
 // lire instructions du mail session 10 pour la partie READ.me
-// questions: 1) après réusinage, le graphique ne s'affiche plus
-            //2) on arrive pas à faire changer dynamiquement l'annee dans le titre
-            //3) ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
-            //4) faut-il utiliser plus de sets de données?
-            //5) lui rappeler qu'il n'a pas montré qu'il fallait mettre la classe cond dans l'index
-            //6) on est obligé d'ajouter une carte?
-// ajouter les icônes des drapeaux des cantons/ou leurs couleurs
+// questions:
+            //3) Faire 2ème graphique en rajoutant un SVG, ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
+            //7) ajouter les icônes des drapeaux des cantons (download via wiki, png créer fichier data avec les drapeaux append.image(svg)) + améliorer mise en page
+            //8) Mettre répositoire sur public pour afficher les pages
+            //9) Améliorer Readme (selon mail)
+            //10) Mettre couleurs au barre des cantons
+            //11) Ajuster l'échelle en fonction des cantons
