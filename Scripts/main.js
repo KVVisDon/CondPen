@@ -32,6 +32,8 @@ const cantons = [
   {id: "ZH", name: "Zurich"},
 ];
 
+const annees = [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
+
 let cpData;
 
 let currentCanton = 'ZH';
@@ -94,7 +96,7 @@ function setupCondamnationsPenales() {
     .attr('style', 'font: 10px sans-serif');
 
   condScaleX = d3.scaleBand()
-    .domain([1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017])
+    .domain(annees)
     .range([margin.left, width - margin.right])
     .padding(0.1)
     .round(true);
@@ -133,21 +135,27 @@ function setupCondamnationsPenales() {
   d3.select("#annee").on("input", (e) => {
     const annee = d3.event.target.value;
     currentAnnee = annee;
-    d3.select('.current-annee').text(currentAnnee)
+    d3.select('.currentAnnee').text(currentAnnee)
     graphCondamnationsPenales();
   })
 }
 // met en place de la visualisation
 
 function graphCondamnationsPenales() {
-  const data = cpData.filter(d => d.canton === currentCanton && d.annee === currentAnnee);
+  const index = annees.indexOf(Number(currentAnnee))
+  var backupAnnee = [...annees]
+  backupAnnee.splice(index+1, annees.length-1)
+  console.log(backupAnnee)
+  const data = backupAnnee.map(a => cpData.filter(d => d.canton === currentCanton && d.annee.split('-')[0] == a)).map(t => t[0])
+  //const data = cpData.filter(d => d.canton === currentCanton && d.annee.split('-')[0] === currentAnnee);
 
+console.log(data)
   condBars.selectAll('rect')
     .data(data)
     .join('rect')
       .attr('width', condScaleX.bandwidth())
       .attr('height', d => condScaleY(0) - condScaleY(d.condamnations))
-      .attr('x', d => condScaleX(d.annee))
+      .attr('x', d => condScaleX(Number(d.annee.split('-')[0])))
       .attr('y', d => condScaleY(d.condamnations))
       .style('fill', d => condColorScale(d.condamnations));
     
@@ -155,7 +163,7 @@ function graphCondamnationsPenales() {
     .data(data)
     .join('text')
       .attr('dy', '0.35em')
-      .attr('x', d => condScaleX(d.annee))
+      .attr('x', d => condScaleX(Number(d.annee.split('-')[0])))
       .attr('y', d => condScaleY(d.condamnations))
       .text(d => d.condamnations);
 }
