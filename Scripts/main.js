@@ -112,7 +112,7 @@ function setupCondamnationsPenales() {
 
   condBars = svg.append('g');
   condTitles = svg.append('g')
-    .style('fill', 'white')
+    .style('fill', 'black')
     .attr('text-anchor', 'middle')
     .attr('transform', `translate(${condScaleX.bandwidth() / 2}, 6)`);
 
