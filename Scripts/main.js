@@ -168,7 +168,7 @@ function graphCondamnationsPenales() {
 
 setup();
 
-// Adapter les chiffres sur l'echelle verticale
+
 // lire instructions du mail session 10 pour la partie READ.me
 // questions:
             //3) Faire 2ème graphique en rajoutant un SVG, ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
