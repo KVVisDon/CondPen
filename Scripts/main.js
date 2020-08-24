@@ -175,5 +175,5 @@ setup();
             //7) ajouter les icônes des drapeaux des cantons (download via wiki, png créer fichier data avec les drapeaux append.image(svg)) + améliorer mise en page
             //8) Mettre répositoire sur public pour afficher les pages
             //9) Améliorer Readme (selon mail)
-            //10) Mettre couleurs au barre des cantons
-            //11) Ajuster l'échelle en fonction des cantons
+            
+           
