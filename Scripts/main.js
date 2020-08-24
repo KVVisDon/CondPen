@@ -93,7 +93,7 @@ function setupCondamnationsPenales() {
     .append('svg')
     .attr('width', width)
     .attr('height', height)
-    .attr('style', 'font: 10px sans-serif');
+    .attr('style', 'font: 10px arial');
 
   condScaleX = d3.scaleBand()
     .domain(annees)
@@ -108,13 +108,13 @@ function setupCondamnationsPenales() {
 
   condColorScale = d3.scaleSequential()
     .domain([minJuge, maxJuge])
-    .interpolator(d3.interpolateBlues);
+    .interpolator(d3.interpolate("Yellow", "Red"));
 
   condBars = svg.append('g');
   condTitles = svg.append('g')
     .style('fill', 'black')
     .attr('text-anchor', 'middle')
-    .attr('transform', `translate(${condScaleX.bandwidth() / 2}, 6)`);
+    .attr('transform', `translate(${condScaleX.bandwidth() / 2}, -6)`);
 
   svg.append('g')
     .attr('transform', `translate(0, ${height - margin.bottom})`)
