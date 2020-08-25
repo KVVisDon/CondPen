@@ -108,7 +108,10 @@ function setupCondamnationsPenales() {
 
   condColorScale = d3.scaleSequential()
     .domain([minJuge, maxJuge])
-    .interpolator(d3.interpolate("Yellow", "Red"));
+
+    .interpolator(d3.interpolate("yellow", "red"));
+
+
 
   condBars = svg.append('g');
   condTitles = svg.append('g')
@@ -172,9 +175,16 @@ setup();
 
 // lire instructions du mail session 10 pour la partie READ.me
 // questions:
+
+            //1) Faire 2ème graphique en rajoutant un SVG, ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissière par année montre par défaut tous les cantons
+            //2) ajouter les icônes des drapeaux des cantons (download via wiki, png créer fichier data avec les drapeaux append.image(svg)) + améliorer mise en page
+            //3) Mettre répositoire sur public pour afficher les pages
+            //4) Améliorer Readme (selon mail)
+
             //3) Faire 2ème graphique en rajoutant un SVG, ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissiere par année montre par défaut tous les cantons
             //7) ajouter les icônes des drapeaux des cantons (download via wiki, png créer fichier data avec les drapeaux append.image(svg)) + améliorer mise en page
             //8) Déterminer pourquoi le lien du repositoire depuis Github, n'affiche pas la même chose que depuis VSC
             //9) Améliorer Readme (selon mail)
             
            
+
