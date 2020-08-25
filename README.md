@@ -1,4 +1,4 @@
-##Condamnations Pénales
+Condamnations Pénales
  
 Demo : https://kvvisdon.github.io/CondPen/
 
@@ -39,7 +39,7 @@ Description du processus :
 5) Affichage des titres dans notre index avec l'inclusion du choix de canton et d'une glissière pour l'année
 6) Création du code en JavaScript
 7) Téléchargement des drapeaux cantonaux en format .png
-8) Amélioraion de la mise en page
+8) Amélioration de la mise en page
 
 
 Auteurs :
