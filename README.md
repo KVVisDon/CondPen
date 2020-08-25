@@ -2,7 +2,9 @@
  
 Demo : https://kvvisdon.github.io/CondPen/
 
+
 <h2>Projet Visualisation de données 2020</h2>
+
 
 
 <h2>Intro :</h2>
@@ -12,12 +14,13 @@ Passionné/e de droit pénal? Venez consulter nos données concernant les condam
 Vous y trouverez l'évolution des condamnations pénales par canton et au fil des années (mais aussi pour tous les cantons en choisissant l'année de votre choix).
 
 
+
 <h2>Data :</h2>
 
-Les données figurant dans ce travail sont issus de l'Office Fédéral de la statisque, vous trouverez de plus amples informations ainsi que des données plus détaillées à l'adresse suivante : 
-https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/tableaux.assetdetail.8946563.html
+Les données figurant dans ce travail sont issus de l'Office Fédéral de la statisque, vous trouverez de plus amples informations ainsi que des données plus détaillées à [l'adresse suivante](https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/tableaux.assetdetail.8946563.html) : 
 
 Nous avons utilisé essentiellement les données concernant les condamnations pénales des adultes par année, ainsi que par canton.
+
 
 
 <h2>Graphique :</h2>
@@ -25,9 +28,11 @@ Nous avons utilisé essentiellement les données concernant les condamnations p�
 Nous avons décidé d'utiliser un histogramme afin de pouvoir présenter nos données de la façon la plus claire et concise possible. En effet, cette présentation d'avoir une visualisation de l'ensemble des données sur une grande période de temps et de choisir parmis les cantons celui qui nous intéresse et d'un simple clique le sélectionner et découvrir les données tant recherchées. (Dans le deuxième graphique, nous donnons la possibilité à l'utilisateur de sélectionner une année et d'ainsi, afficher les valeurs de l'ensemble des cantons. Il y a même les drapeaux des différents cantons qui s'affichent. C'est complètement dingue!)
 
 
+
 <h2>Construction du graphique :</h2>
 
 Ce projet est fondé sur l'utilisation de logiciels comme GitHub et Visual Studio Code. Nous avons utilisé principalement les langages suivants : HTML, CSS et JavaScript.
+
 
 
 <h2>Description du processus :</h2>
@@ -40,6 +45,7 @@ Ce projet est fondé sur l'utilisation de logiciels comme GitHub et Visual Studi
 6) Création du code en JavaScript
 7) Téléchargement des drapeaux cantonaux en format .png
 8) Amélioration de la mise en page
+
 
 
 <h2>Auteurs :</h2>
