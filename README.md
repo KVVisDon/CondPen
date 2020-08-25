@@ -7,7 +7,7 @@ Demo : https://kvvisdon.github.io/CondPen/
 
 <h2>Intro :</h2>
 
-Passionné/e de droit pénal? Venez consulter nos données concernant les condamnations pénales en Suisse de 1984 jusqu'en 2017 sous un aspect interactif et ludique. C'est [ici] (https://kvvisdon.github.io/CondPen/)!
+Passionné/e de droit pénal? Venez consulter nos données concernant les condamnations pénales en Suisse de 1984 jusqu'en 2017 sous un aspect interactif et ludique. C'est [ici](https://kvvisdon.github.io/CondPen/)!
 
 Vous y trouverez l'évolution des condamnations pénales par canton et au fil des années (mais aussi pour tous les cantons en choisissant l'année de votre choix).
 
