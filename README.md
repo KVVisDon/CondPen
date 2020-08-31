@@ -25,7 +25,7 @@ Nous avons utilisé essentiellement les données concernant les condamnations p�
 
 <h2>Graphique :</h2>
 
-Nous avons décidé d'utiliser un histogramme afin de pouvoir présenter nos données de la façon la plus claire et concise possible. En effet, cette présentation permet d'avoir une vue de l'ensemble des données sur une grande période de temps, et de choisir parmis les cantons, celui qui nous intéresse et d'un simple clique le sélectionner et découvrir les données tant recherchées. D'autre part, en choississant le canton, le drapeau associé s'affiche. 
+Nous avons décidé d'utiliser un histogramme afin de pouvoir présenter nos données de la façon la plus claire et concise possible. En effet, cette présentation permet d'avoir une vue de l'ensemble des données sur une grande période de temps. D'un simple clique, il est possible de sélectionner le canton nous intéressant et ainsi de découvrir les données tant recherchées. Une glissière permet également d'étendre ou de raccourcir la période temporelle observée. D'autre part, en choississant le canton, le drapeau y étant associé s'affiche. 
 
 
 
