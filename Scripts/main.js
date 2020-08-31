@@ -93,11 +93,13 @@ function onDataLoaded(data) {
       if (exFlag) {
           exFlag.remove();
       }
+// enlève le drapeau précédemment choissi
 
   var img = document.createElement("img");
   img.src = cantons.filter(d => d.id === currentCanton)[0]["flag"];
   var src = document.getElementById("myCanton");
   src.appendChild(img);
+// ajoute le drapeau en fonction du canton choissi
 
   graphCondamnationsPenales();
 }
@@ -127,8 +129,7 @@ function setupCondamnationsPenales() {
     .domain([minJuge, maxJuge])
 
     .interpolator(d3.interpolate("yellow", "red"));
-
-
+// formatage des barres dans le graphique
 
   condBars = svg.append('g');
   condTitles = svg.append('g')
@@ -159,7 +160,7 @@ function setupCondamnationsPenales() {
     graphCondamnationsPenales();
   })
 }
-// met en place de la visualisation
+// met en place la visualisation
 
 function graphCondamnationsPenales() {
   const index = annees.indexOf(Number(currentAnnee))
@@ -188,15 +189,3 @@ function graphCondamnationsPenales() {
 
 
 setup();
-
-
-// lire instructions du mail session 10 pour la partie READ.me
-// questions:
-
-            //1) Faire 2ème graphique en rajoutant un SVG, ajouter la fonctionalité de l'année pour voir les résultats par année pour tous les cantons ou bien faire en sorte que la glissière par année montre par défaut tous les cantons
-            //2) ajouter les icônes des drapeaux des cantons (download via wiki, png créer fichier data avec les drapeaux append.image(svg)) + améliorer mise en page
-            //3) Améliorer Readme (selon mail)
-
-            
-           
-
