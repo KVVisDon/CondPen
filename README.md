@@ -11,7 +11,7 @@ Demo : https://kvvisdon.github.io/CondPen/
 
 Passionné/e de droit pénal? Venez consulter nos données concernant les condamnations pénales en Suisse de 1984 jusqu'en 2017 sous un aspect interactif et ludique. C'est [ici](https://kvvisdon.github.io/CondPen/)!
 
-Vous y trouverez l'évolution des condamnations pénales par canton et au fil des années (mais aussi pour tous les cantons en choisissant l'année de votre choix).
+Vous y trouverez l'évolution des condamnations pénales par canton et au fil des années.
 
 
 
@@ -25,7 +25,7 @@ Nous avons utilisé essentiellement les données concernant les condamnations p�
 
 <h2>Graphique :</h2>
 
-Nous avons décidé d'utiliser un histogramme afin de pouvoir présenter nos données de la façon la plus claire et concise possible. En effet, cette présentation d'avoir une visualisation de l'ensemble des données sur une grande période de temps et de choisir parmis les cantons celui qui nous intéresse et d'un simple clique le sélectionner et découvrir les données tant recherchées. (Dans le deuxième graphique, nous donnons la possibilité à l'utilisateur de sélectionner une année et d'ainsi, afficher les valeurs de l'ensemble des cantons. Il y a même les drapeaux des différents cantons qui s'affichent. C'est complètement dingue!)
+Nous avons décidé d'utiliser un histogramme afin de pouvoir présenter nos données de la façon la plus claire et concise possible. En effet, cette présentation permet d'avoir une vue de l'ensemble des données sur une grande période de temps, et de choisir parmis les cantons, celui qui nous intéresse et d'un simple clique le sélectionner et découvrir les données tant recherchées. D'autre part, en choississant le canton, le drapeau associé s'affiche. 
 
 
 
@@ -45,6 +45,7 @@ Ce projet est fondé sur l'utilisation de logiciels comme GitHub et Visual Studi
 6) Création du code en JavaScript
 7) Téléchargement des drapeaux cantonaux en format .png
 8) Amélioration de la mise en page
+9) Ajout des drapeaux cantonaux
 
 
 
