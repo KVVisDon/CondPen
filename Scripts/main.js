@@ -32,6 +32,10 @@ const cantons = [
   {id: "ZH", name: "Zurich"},
 ];
 
+for (i in cantons) {
+  cantons[i]["flag"] = "Data/Flags/" + cantons[i]["name"] + ".png";
+}
+
 const annees = [1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 
 let cpData;
@@ -81,7 +85,20 @@ function onDataLoaded(data) {
         } else {
           option.attr('selected', null);
         }
-      })
+      });
+  
+  const exFlag = d3.select("#myCanton:")
+    .selectAll("img")
+
+    if (exFlag) {
+      exFlag.remove();
+    }
+
+  var img = document.createElement("img");
+  img.src = cantons.filter(d=>d.id === currentCanton) [0]["flag"];
+  var src = document.getElementById("myCanton");
+  src.appendChild(img);
+  
   graphCondamnationsPenales();
 }
 
