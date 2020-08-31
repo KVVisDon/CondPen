@@ -86,16 +86,9 @@ function onDataLoaded(data) {
           option.attr('selected', null);
         }
       });
-  
-  const exFlag = d3.select("#myCanton")
-    .selectAll("img")
-
-    if (exFlag) {
-        exFlag.remove();
-    }
 
   var img = document.createElement("img");
-  img.src = cantons.filter(d => d.id === currentCanton) [0]["flag"];
+  img.src = cantons.filter(d => d.id === currentCanton)[0]["flag"];
   var src = document.getElementById("myCanton");
   src.appendChild(img);
 
