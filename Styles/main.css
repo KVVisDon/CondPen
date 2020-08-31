@@ -19,6 +19,7 @@ input {
 
 .footer {
     margin-top: 2em;
+    padding-left: 10px;
 }
 
 h1 {
@@ -36,4 +37,18 @@ h2 {
 
 label{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#myCanton {
+    display: flex;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+#myCanton img {
+    padding-left: 10px;
+}
+
+.cond {
+    padding-left: 10px;
 }
